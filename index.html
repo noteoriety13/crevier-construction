@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crevier Construction &amp; Masonry | Alpena, Michigan</title>
+  <meta name="description" content="Crevier Construction and Masonry serves Alpena, Michigan and the surrounding area. Call for a free estimate.">
+  <style>
+    :root {
+      --brick: #9c3d2e;
+      --brick-dark: #7a2e22;
+      --charcoal: #2b2b2b;
+      --stone: #6b6560;
+      --cream: #f6f2ec;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      background: var(--charcoal);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand { font-weight: 800; letter-spacing: .5px; text-decoration: none; font-size: 1.1rem; }
+    .brand span { color: #e0a090; font-weight: 600; }
+    nav a { text-decoration: none; margin-left: 18px; font-size: .95rem; opacity: .9; }
+    nav a:hover { opacity: 1; }
+    .call-btn {
+      background: var(--brick);
+      color: var(--white);
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .call-btn:hover { background: var(--brick-dark); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #3a3532 0%, #2b2b2b 60%, #4a2a22 100%);
+      color: var(--white);
+      padding: 90px 0 80px;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; max-width: 16ch; }
+    .hero p { margin: 18px 0 28px; max-width: 52ch; font-size: 1.1rem; opacity: .9; }
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    .btn-primary { background: var(--brick); color: var(--white); }
+    .btn-primary:hover { background: var(--brick-dark); }
+    .btn-ghost { border: 2px solid rgba(255,255,255,.6); color: var(--white); }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    /* Sections */
+    section { padding: 70px 0; }
+    section h2 { font-size: 1.9rem; margin-bottom: 8px; }
+    .lead { color: var(--stone); margin-bottom: 36px; max-width: 60ch; }
+    .alt { background: var(--white); }
+
+    /* Services */
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 26px;
+      border-top: 4px solid var(--brick);
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .alt .card { background: var(--cream); box-shadow: none; }
+    .card h3 { margin-bottom: 8px; font-size: 1.15rem; }
+    .card p { color: var(--stone); font-size: .98rem; }
+
+    /* Projects */
+    .photo {
+      aspect-ratio: 4 / 3;
+      border-radius: 10px;
+      background: repeating-linear-gradient(45deg, #d9d2c8, #d9d2c8 14px, #cfc7bb 14px, #cfc7bb 28px);
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+      color: var(--charcoal);
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    .photo span { background: rgba(255,255,255,.85); padding: 4px 10px; border-radius: 4px; }
+
+    /* About */
+    .about { display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: center; }
+    .about p { margin-bottom: 14px; }
+    ul.checks { list-style: none; }
+    ul.checks li { padding-left: 28px; position: relative; margin-bottom: 10px; }
+    ul.checks li::before { content: "✓"; position: absolute; left: 0; color: var(--brick); font-weight: 800; }
+
+    /* Contact */
+    .contact { background: var(--charcoal); color: var(--white); }
+    .contact .lead { color: #cfc8c0; }
+    .contact-grid { display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .big-phone { font-size: 2rem; font-weight: 800; text-decoration: none; color: #e0a090; }
+    form { display: grid; gap: 12px; }
+    label { font-size: .9rem; font-weight: 600; }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font: inherit;
+      margin-top: 4px;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button {
+      background: var(--brick);
+      color: var(--white);
+      border: none;
+      padding: 14px;
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button:hover { background: var(--brick-dark); }
+    .note { font-size: .85rem; color: #b5ada4; }
+
+    footer { background: #1c1c1c; color: #9a938b; text-align: center; padding: 22px 0; font-size: .9rem; }
+
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .hero { padding: 60px 0; }
+      section { padding: 50px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">CREVIER <span>Construction &amp; Masonry</span></a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- TODO: replace with the real work phone number (both places: href and text) -->
+      <a class="call-btn" href="tel:+19895550123">Call (989) 555-0123</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap">
+        <h1>Built right. Built to last.</h1>
+        <p>Masonry and construction for homes and businesses in Alpena and the surrounding area. Call or send a message and we'll get back to you about your project.</p>
+        <a class="btn btn-primary" href="tel:+19895550123">Call for a free estimate</a>
+        <a class="btn btn-ghost" href="#contact">Send a message</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <h2>What we do</h2>
+        <p class="lead">From a single repair to a full build, here's the work we take on.</p>
+        <!-- TODO: confirm the real service list with the family -->
+        <div class="grid">
+          <div class="card">
+            <h3>Brick &amp; Block Work</h3>
+            <p>New walls, repairs, and matching existing brick so the finished job looks like it was always there.</p>
+          </div>
+          <div class="card">
+            <h3>Stone &amp; Veneer</h3>
+            <p>Natural and manufactured stone for exteriors, fireplaces, and accent walls.</p>
+          </div>
+          <div class="card">
+            <h3>Chimneys &amp; Repointing</h3>
+            <p>Chimney rebuilds, tuckpointing, and mortar repair to keep water out and structures sound.</p>
+          </div>
+          <div class="card">
+            <h3>Foundations &amp; Retaining Walls</h3>
+            <p>Solid footings and walls built for Michigan freeze and thaw cycles.</p>
+          </div>
+          <div class="card">
+            <h3>Patios &amp; Walkways</h3>
+            <p>Paver and masonry outdoor spaces designed for how you actually use your yard.</p>
+          </div>
+          <div class="card">
+            <h3>General Construction</h3>
+            <p>Additions, remodels, and repairs handled start to finish.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="alt">
+      <div class="wrap">
+        <h2>Recent projects</h2>
+        <p class="lead">A look at some of our work.</p>
+        <!-- TODO: swap these placeholders for real job photos -->
+        <div class="grid">
+          <div class="photo"><span>Photo coming soon: stone fireplace</span></div>
+          <div class="photo"><span>Photo coming soon: brick repair</span></div>
+          <div class="photo"><span>Photo coming soon: patio and walkway</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <h2>Family-run, locally rooted</h2>
+          <!-- TODO: rewrite this in the family's own words -->
+          <p>Crevier Construction and Masonry is a family business serving the Alpena area. We take pride in doing the job right the first time and treating every project like it's our own home.</p>
+          <p>Because we're a small crew, we're often on a job site when you call. Leave a message and we'll call you back.</p>
+        </div>
+        <ul class="checks">
+          <li>Free estimates</li>
+          <li>Locally owned and operated</li>
+          <li>Quality materials and clean job sites</li>
+          <li>Honest answers and straightforward pricing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="wrap">
+        <h2>Get a free estimate</h2>
+        <p class="lead">The fastest way to reach us is by phone. If we miss your call, leave a message and we'll call back.</p>
+        <div class="contact-grid">
+          <div>
+            <p><a class="big-phone" href="tel:+19895550123">(989) 555-0123</a></p>
+            <p style="margin-top:14px;">Serving Alpena, Michigan and nearby communities.</p>
+          </div>
+          <!-- This form is a visual placeholder for now. We'll connect it to Supabase later so messages actually get saved. -->
+          <form onsubmit="event.preventDefault(); alert('Form not connected yet. Please call us for now.');">
+            <label>Name<input type="text" name="name" required></label>
+            <label>Phone<input type="tel" name="phone" required></label>
+            <label>What do you need done?<textarea name="message"></textarea></label>
+            <button type="submit">Request a callback</button>
+            <p class="note">Form is a preview and doesn't send yet.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Crevier Construction &amp; Masonry. Alpena, Michigan.</div>
+  </footer>
+
+</body>
+</html>
