@@ -7,11 +7,14 @@
   <meta name="description" content="Crevier Construction and Masonry serves Alpena, Michigan and the surrounding area. Call for a free estimate.">
   <style>
     :root {
-      --brick: #9c3d2e;
-      --brick-dark: #7a2e22;
-      --charcoal: #2b2b2b;
-      --stone: #6b6560;
-      --cream: #f6f2ec;
+      --green: #2f6b45;
+      --green-dark: #22503a;
+      --green-light: #a9d1b4;
+      --brown: #8a6a4a;
+      --brown-dark: #3b2f26;
+      --charcoal: #2b2f2d;
+      --stone: #666b69;
+      --cream: #f1f2f0;
       --white: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,6 +35,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 4px solid var(--brown);
     }
     .nav {
       display: flex;
@@ -42,11 +46,11 @@
       flex-wrap: wrap;
     }
     .brand { font-weight: 800; letter-spacing: .5px; text-decoration: none; font-size: 1.1rem; }
-    .brand span { color: #e0a090; font-weight: 600; }
+    .brand span { color: var(--green-light); font-weight: 600; }
     nav a { text-decoration: none; margin-left: 18px; font-size: .95rem; opacity: .9; }
     nav a:hover { opacity: 1; }
     .call-btn {
-      background: var(--brick);
+      background: var(--green);
       color: var(--white);
       padding: 9px 16px;
       border-radius: 6px;
@@ -54,11 +58,11 @@
       text-decoration: none;
       white-space: nowrap;
     }
-    .call-btn:hover { background: var(--brick-dark); }
+    .call-btn:hover { background: var(--green-dark); }
 
     /* Hero */
     .hero {
-      background: linear-gradient(135deg, #3a3532 0%, #2b2b2b 60%, #4a2a22 100%);
+      background: linear-gradient(135deg, #3a3d3b 0%, #2b2f2d 55%, #1f3d2b 100%);
       color: var(--white);
       padding: 90px 0 80px;
     }
@@ -73,8 +77,8 @@
       margin-right: 10px;
       margin-bottom: 10px;
     }
-    .btn-primary { background: var(--brick); color: var(--white); }
-    .btn-primary:hover { background: var(--brick-dark); }
+    .btn-primary { background: var(--green); color: var(--white); }
+    .btn-primary:hover { background: var(--green-dark); }
     .btn-ghost { border: 2px solid rgba(255,255,255,.6); color: var(--white); }
     .btn-ghost:hover { background: rgba(255,255,255,.1); }
 
@@ -90,7 +94,7 @@
       background: var(--white);
       border-radius: 10px;
       padding: 26px;
-      border-top: 4px solid var(--brick);
+      border-top: 4px solid var(--green);
       box-shadow: 0 2px 10px rgba(0,0,0,.06);
     }
     .alt .card { background: var(--cream); box-shadow: none; }
@@ -101,7 +105,7 @@
     .photo {
       aspect-ratio: 4 / 3;
       border-radius: 10px;
-      background: repeating-linear-gradient(45deg, #d9d2c8, #d9d2c8 14px, #cfc7bb 14px, #cfc7bb 28px);
+      background: repeating-linear-gradient(45deg, #dedad4, #dedad4 14px, #d3cdc4 14px, #d3cdc4 28px);
       display: flex;
       align-items: flex-end;
       padding: 14px;
@@ -116,13 +120,13 @@
     .about p { margin-bottom: 14px; }
     ul.checks { list-style: none; }
     ul.checks li { padding-left: 28px; position: relative; margin-bottom: 10px; }
-    ul.checks li::before { content: "✓"; position: absolute; left: 0; color: var(--brick); font-weight: 800; }
+    ul.checks li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
 
     /* Contact */
     .contact { background: var(--charcoal); color: var(--white); }
-    .contact .lead { color: #cfc8c0; }
+    .contact .lead { color: #c9cfcb; }
     .contact-grid { display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .big-phone { font-size: 2rem; font-weight: 800; text-decoration: none; color: #e0a090; }
+    .big-phone { font-size: 2rem; font-weight: 800; text-decoration: none; color: var(--green-light); }
     form { display: grid; gap: 12px; }
     label { font-size: .9rem; font-weight: 600; }
     input, textarea {
@@ -135,7 +139,7 @@
     }
     textarea { min-height: 110px; resize: vertical; }
     button {
-      background: var(--brick);
+      background: var(--green);
       color: var(--white);
       border: none;
       padding: 14px;
@@ -144,10 +148,10 @@
       font-weight: 700;
       cursor: pointer;
     }
-    button:hover { background: var(--brick-dark); }
-    .note { font-size: .85rem; color: #b5ada4; }
+    button:hover { background: var(--green-dark); }
+    .note { font-size: .85rem; color: #aab0ac; }
 
-    footer { background: #1c1c1c; color: #9a938b; text-align: center; padding: 22px 0; font-size: .9rem; }
+    footer { background: var(--brown-dark); color: #c9bfb4; text-align: center; padding: 22px 0; font-size: .9rem; }
 
     @media (max-width: 640px) {
       nav { display: none; }
