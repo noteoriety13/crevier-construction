@@ -179,10 +179,11 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--green-light); padding-
 .stack .card p { color: rgba(255,255,255,.92); font-size: 1.1rem; }
 .stack .card .go { font-weight: 700; white-space: nowrap; border-bottom: 2px solid rgba(255,255,255,.7); padding-bottom: 2px; }
 .stack .c1 { background: #2f6b45; }
-.stack .c2 { background: #8a6a4a; }
-.stack .c3 { background: #4f5b57; }
-.stack .c4 { background: #5f6f3e; }
-.stack .c5 { background: #2d5f5c; }
+.stack .c2 { background: #4f5b57; }
+.stack .c3 { background: #8a6a4a; }
+.stack .c4 { background: #2d5f5c; }
+.stack .c5 { background: #5f6f3e; }
+.stack .c6 { background: #6b5d52; }
 @media (max-width: 800px) {
   .stack .card { grid-template-columns: 1fr; padding: 28px 24px; min-height: 0; }
   .stack .card .go { justify-self: start; }
