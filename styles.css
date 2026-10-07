@@ -65,9 +65,12 @@ nav a:hover { opacity: 1; }
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, #3a3d3b 0%, #2b2f2d 55%, #1f3d2b 100%);
+  background:
+    linear-gradient(90deg, rgba(20,26,23,.82) 0%, rgba(20,26,23,.58) 55%, rgba(20,26,23,.38) 100%),
+    url("/images/hero.jpg") center 40% / cover no-repeat,
+    #2b2f2d;
   color: var(--white);
-  padding: 90px 0 80px;
+  padding: 120px 0 110px;
 }
 .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; max-width: 16ch; }
 .hero p { margin: 18px 0 28px; max-width: 52ch; font-size: 1.1rem; opacity: .9; }
@@ -280,7 +283,7 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--green-light); padding-
 @media (max-width: 640px) {
   nav a { margin: 0 8px; }
   .tab-soon { margin: 0 8px; }
-  .hero { padding: 60px 0; }
+  .hero { padding: 70px 0; background-position: 60% 40%; }
   .page-hero { padding: 40px 0 36px; }
   section { padding: 50px 0; }
 }
