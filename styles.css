@@ -209,6 +209,20 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--green-light); padding-
 .cta .btn-light { background: var(--white); color: var(--green-dark); }
 .cta .btn-light:hover { background: var(--cream); }
 
+/* About page: three columns side by side */
+.page-hero.slim { padding: 32px 0 28px; }
+.page-hero.slim h1 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); }
+.about-section { padding: 36px 0 56px; }
+.about-section > .wrap { max-width: 1240px; }
+.about-cols { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 24px; align-items: stretch; }
+.about-cols .card { padding: 30px 28px; }
+.about-cols .card h2 { font-size: 1.45rem; line-height: 1.2; margin-bottom: 14px; }
+.about-cols .card p { color: var(--charcoal); font-size: 1rem; margin-bottom: 14px; }
+.about-cols .checks { margin-top: 18px; }
+.about-cols .checks li { font-size: .98rem; }
+.about-cols .social { flex-direction: column; align-items: flex-start; margin-top: 18px; }
+@media (max-width: 900px) { .about-cols { grid-template-columns: 1fr; } }
+
 /* Social links */
 .social { display: flex; flex-wrap: wrap; gap: 12px; }
 .social-btn {
