@@ -209,6 +209,36 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--green-light); padding-
 .cta .btn-light { background: var(--white); color: var(--green-dark); }
 .cta .btn-light:hover { background: var(--cream); }
 
+/* Social links */
+.social { display: flex; flex-wrap: wrap; gap: 12px; }
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px 12px 14px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+.social-btn:hover { background: var(--green-dark); }
+.social-btn .badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--green-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.foot-social { margin-bottom: 8px; }
+.foot-social a { color: #e3d8cc; margin: 0 10px; font-weight: 600; text-decoration: none; }
+.foot-social a:hover { text-decoration: underline; }
+
 /* Photo gallery */
 .group { margin-bottom: 52px; scroll-margin-top: 130px; }
 .group:last-child { margin-bottom: 0; }
