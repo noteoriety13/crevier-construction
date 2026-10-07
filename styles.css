@@ -37,8 +37,11 @@ header {
   gap: 16px;
   flex-wrap: wrap;
 }
-.brand { font-weight: 800; letter-spacing: .5px; text-decoration: none; font-size: 1.1rem; }
-.brand span { color: var(--green-light); font-weight: 600; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark { width: 44px; height: 44px; display: block; flex: none; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text b { font-size: 1.3rem; font-weight: 800; letter-spacing: .1em; }
+.brand-text small { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--green-light); margin-top: 3px; }
 nav a { text-decoration: none; margin-left: 18px; font-size: .95rem; opacity: .9; }
 nav a:hover { opacity: 1; }
 .nav.wrap { max-width: 1240px; }
