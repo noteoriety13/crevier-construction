@@ -371,3 +371,4 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--gold-light); padding-b
 .no-photos { background: var(--white); border-top: 4px solid var(--gold); border-radius: 10px; padding: 40px 32px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
 .no-photos h2 { margin-bottom: 10px; font-size: 1.5rem; }
 .no-photos p { color: var(--stone); max-width: 56ch; margin: 0 auto; }
+.foot-credit { margin-top: 4px; font-size: .8rem; opacity: .7; }
