@@ -328,6 +328,10 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--gold-light); padding-b
   nav a { margin: 0 12px; font-size: .92rem; }
   .tab-soon { margin: 0 12px; font-size: .88rem; }
 }
+@media (max-width: 900px) {
+  header { position: static; }
+  .group { scroll-margin-top: 20px; }
+}
 @media (max-width: 640px) {
   nav a { margin: 0 8px; }
   .tab-soon { margin: 0 8px; }
