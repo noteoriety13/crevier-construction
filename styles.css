@@ -359,3 +359,6 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--gold-light); padding-b
 .flyer { display: block; border-radius: 10px; overflow: hidden; line-height: 0; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
 .flyer img { width: 100%; height: auto; display: block; }
 @media (max-width: 800px) { .flyer-block { grid-template-columns: 1fr; } .flyer { order: 2; max-width: 420px; } }
+.flyer-block.home { margin-top: 0; padding-top: 0; border-top: none; }
+.flyer-section { background: var(--white); }
+.flyer-text .more-link { margin-left: 8px; }
