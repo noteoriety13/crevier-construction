@@ -351,3 +351,11 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--gold-light); padding-b
 .info-list li { margin-bottom: 8px; }
 .info-list b { color: var(--gold-light); }
 .mail-link { display: inline-block; margin-top: 4px; color: var(--gold-light); font-weight: 700; font-size: 1.2rem; }
+
+/* Concrete replacement guide */
+.flyer-block { display: grid; grid-template-columns: 1fr minmax(260px, 420px); gap: 36px; align-items: center; margin-top: 56px; padding-top: 48px; border-top: 3px solid var(--gold); }
+.flyer-text h2 { font-size: 1.7rem; margin-bottom: 14px; }
+.flyer-text p { margin-bottom: 14px; max-width: 52ch; }
+.flyer { display: block; border-radius: 10px; overflow: hidden; line-height: 0; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+.flyer img { width: 100%; height: auto; display: block; }
+@media (max-width: 800px) { .flyer-block { grid-template-columns: 1fr; } .flyer { order: 2; max-width: 420px; } }
