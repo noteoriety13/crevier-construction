@@ -362,3 +362,5 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--gold-light); padding-b
 .flyer-block.home { margin-top: 0; padding-top: 0; border-top: none; }
 .flyer-section { background: var(--white); }
 .flyer-text .more-link { margin-left: 8px; }
+.contact-grid.with-flyer { grid-template-columns: 1fr minmax(260px, 400px); align-items: start; }
+@media (max-width: 800px) { .contact-grid.with-flyer { grid-template-columns: 1fr; } .contact-grid.with-flyer .flyer { max-width: 400px; } }
