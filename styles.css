@@ -372,3 +372,6 @@ nav a.active { opacity: 1; border-bottom: 2px solid var(--gold-light); padding-b
 .no-photos h2 { margin-bottom: 10px; font-size: 1.5rem; }
 .no-photos p { color: var(--stone); max-width: 56ch; margin: 0 auto; }
 .foot-credit { margin-top: 4px; font-size: .8rem; opacity: .7; }
+
+.more-btn { display: block; margin: 22px auto 0; background: var(--black); color: var(--gold-light); border: 2px solid var(--gold); padding: 12px 28px; border-radius: 999px; font-weight: 700; cursor: pointer; }
+.more-btn:hover { background: var(--charcoal); }

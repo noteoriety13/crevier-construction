@@ -14,7 +14,7 @@
   <link rel="icon" href="/logo/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png">
 </head>
-<body>
+<body data-limit="6">
 
   <header>
     <div class="wrap nav">
@@ -178,52 +178,7 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var tiles = [].slice.call(document.querySelectorAll('.tile'));
-      var lb = document.getElementById('lb');
-      var big = lb.querySelector('img');
-      var cap = lb.querySelector('figcaption');
-      var cur = 0;
-
-      function show(i) {
-        cur = (i + tiles.length) % tiles.length;
-        var t = tiles[cur];
-        big.src = t.getAttribute('href');
-        big.alt = t.querySelector('img').alt;
-        cap.textContent = t.closest('.group').querySelector('h2').textContent;
-      }
-
-      function open(i) {
-        show(i);
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function close() {
-        lb.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      tiles.forEach(function (t, i) {
-        t.addEventListener('click', function (e) {
-          e.preventDefault();
-          open(i);
-        });
-      });
-
-      lb.querySelector('.x').addEventListener('click', close);
-      lb.querySelector('.prev').addEventListener('click', function () { show(cur - 1); });
-      lb.querySelector('.next').addEventListener('click', function () { show(cur + 1); });
-      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
-      document.addEventListener('keydown', function (e) {
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') close();
-        if (e.key === 'ArrowLeft') show(cur - 1);
-        if (e.key === 'ArrowRight') show(cur + 1);
-      });
-    })();
-  </script>
+  <script src="/gallery.js"></script>
 
 </body>
 </html>
