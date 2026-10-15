@@ -1,0 +1,104 @@
+/* Motion polish. Nothing here changes colors, layout or type: it only adds movement.
+   Loaded after styles.css. Everything is switched off for people who ask for reduced motion. */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* ---- header ---- */
+  header { transition: box-shadow .3s ease; }
+  header.is-scrolled { box-shadow: 0 8px 26px rgba(0,0,0,.4); }
+  .brand-mark { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); }
+  nav a:not(.active):not(.call-btn) { position: relative; }
+  nav a:not(.active):not(.call-btn)::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 2px;
+    background: var(--gold-light); transform: scaleX(0); transform-origin: left;
+    transition: transform .3s cubic-bezier(.2,.7,.2,1);
+  }
+  nav a:not(.active):not(.call-btn):hover::after { transform: scaleX(1); }
+  .call-btn { transition: background .2s, transform .2s, box-shadow .2s; }
+  .call-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(201,160,99,.35); }
+
+  /* thin gold bar that fills as you scroll */
+  .fx-progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60;
+    background: var(--gold); transform: scaleX(0); transform-origin: left; pointer-events: none;
+  }
+
+  /* ---- hero: the photo slowly pushes in, the text rises ---- */
+  .hero { position: relative; overflow: hidden; isolation: isolate; background: #0b0b0c; }
+  .hero::before {
+    content: ""; position: absolute; inset: -4%; z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(8,8,9,.86) 0%, rgba(8,8,9,.62) 55%, rgba(8,8,9,.42) 100%),
+      url("/images/hero.jpg") center 40% / cover no-repeat;
+    transform-origin: 62% 42%;
+    translate: 0 var(--py, 0px);
+    animation: fxPush 28s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+  @keyframes fxPush { from { transform: scale(1); } to { transform: scale(1.09); } }
+  @media (max-width: 640px) { .hero::before { background-position: 60% 40%; } }
+
+  .hero h1, .hero p, .hero .btn { animation: fxRise .9s cubic-bezier(.2,.7,.2,1) backwards; }
+  .hero h1 { animation-delay: .1s; }
+  .hero p { animation-delay: .28s; }
+  .hero .btn-primary { animation-delay: .44s, 2.2s; animation-name: fxRise, fxRing; animation-duration: .9s, 3.4s; animation-iteration-count: 1, infinite; animation-fill-mode: backwards, none; }
+  .hero .btn-ghost { animation-delay: .52s; }
+  @keyframes fxRise { from { opacity: 0; transform: translateY(26px); } }
+  @keyframes fxRing {
+    0% { box-shadow: 0 0 0 0 rgba(201,160,99,.55); }
+    70%, 100% { box-shadow: 0 0 0 16px rgba(201,160,99,0); }
+  }
+
+  /* ---- buttons ---- */
+  .btn { position: relative; transition: background .2s, transform .2s, box-shadow .2s; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.22); }
+  .btn::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 65%) 160% 0 / 250% 100% no-repeat;
+  }
+  .btn:hover::after { background-position: -60% 0; transition: background-position .7s ease; }
+
+  /* ---- cards and photos ---- */
+  .grid .card, .about-cols .card { transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease; }
+  .grid .card:hover, .about-cols .card:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(0,0,0,.13); }
+  .tile::after, .photo.has-img::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left; transition: transform .4s cubic-bezier(.2,.7,.2,1); pointer-events: none;
+  }
+  .tile:hover::after, .photo.has-img:hover::after { transform: scaleX(1); }
+  .tile img, .photo.has-img img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+
+  /* ---- gold band: a slow glint sweeps across ---- */
+  .cta { position: relative; overflow: hidden; }
+  .cta .wrap { position: relative; }
+  .cta::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(110deg, transparent 38%, rgba(255,255,255,.28) 50%, transparent 62%);
+    transform: translateX(-110%); animation: fxGlint 8s ease-in-out 1.5s infinite;
+  }
+  @keyframes fxGlint { 0% { transform: translateX(-110%); } 35%, 100% { transform: translateX(110%); } }
+
+  /* ---- inner page banners: a soft light drifts across ---- */
+  .page-hero { position: relative; overflow: hidden; }
+  .page-hero > * { position: relative; }
+  .page-hero::before {
+    content: ""; position: absolute; width: 70%; aspect-ratio: 1; right: -15%; top: -60%;
+    background: radial-gradient(closest-side, rgba(201,160,99,.16), transparent);
+    pointer-events: none; animation: fxDrift 16s ease-in-out infinite alternate;
+  }
+  @keyframes fxDrift { from { transform: translate(0,0); } to { transform: translate(-18%, 30%); } }
+
+  /* ---- reveal on scroll (the classes are added by fx.js) ---- */
+  .rv { opacity: 0; }
+  .rv.in { opacity: 1; animation: fxReveal .85s cubic-bezier(.2,.7,.2,1) var(--d, 0s) backwards; }
+  @keyframes fxReveal { from { opacity: 0; transform: translateY(26px); } }
+  .trust li.rv.in { animation-name: fxPop; animation-duration: .55s; }
+  @keyframes fxPop { from { opacity: 0; transform: translateY(10px) scale(.96); } }
+
+  /* ---- photo viewer ---- */
+  .lb.open { animation: fxFade .25s ease; }
+  .lb.open img { animation: fxZoom .35s cubic-bezier(.2,.7,.2,1); }
+  @keyframes fxFade { from { opacity: 0; } }
+  @keyframes fxZoom { from { opacity: 0; transform: scale(.96); } }
+}
